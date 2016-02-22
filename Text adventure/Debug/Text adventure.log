@@ -1,0 +1,6 @@
+﻿  main.cpp
+g:\diseño videojuegos\programacion 2\text adventure\text adventure\main.cpp(28): warning C4101: 'dir': unreferenced local variable
+g:\diseño videojuegos\programacion 2\text adventure\text adventure\main.cpp(121): warning C4018: '<': signed/unsigned mismatch
+g:\diseño videojuegos\programacion 2\text adventure\text adventure\main.cpp(126): warning C4018: '<': signed/unsigned mismatch
+  Text adventure.vcxproj -> G:\Diseño videojuegos\Programacion 2\Text adventure\Debug\Text adventure.exe
+  Text adventure.vcxproj -> G:\Diseño videojuegos\Programacion 2\Text adventure\Debug\Text adventure.pdb (Partial PDB)

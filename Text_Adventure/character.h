@@ -1,5 +1,7 @@
 
 class character {
+public:
+
 	int position;
 	int weight;
 	int inventory[10];

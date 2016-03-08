@@ -1,27 +1,28 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "data.h"
+#include "map.h"
+#include "character.h"
+#include "item.h"
 
 void createmap(map* location);
 void look(map* location, character mc);
 void action(map* location, character mc, char* decision);
 void move(map* location, character mc, char direction);
 
-// Por acabar
+// TO DO
 // Datos inicio creacion mapa																						
-// Se tiene que cambiar la n por la posicion del personaje															[hecho]
-// Preguntar a Pillosu si vale la pena poner un ID o forma de tener en cuenta como hacer bloqueo de camino			
+// Se tiene que cambiar la n por la posicion del personaje															[hecho]	
 // Acabar funcion de movimiento																						[no se guarda la nueva posicion]
 
-// Por empezar
-// Introducir objetos
-// Introducir NPCs (hace falta crear struct)
+// TO START
+// Introduce objects
+// Introduce NPCs (need to create CLASS)
 // Acciones
 // Bloqueos
 
 int main(void) {
-	int lose = 0; 
+	int lose = 0;
 	char decision[20];
 	map location[20];
 	character mc;
@@ -32,10 +33,10 @@ int main(void) {
 	createmap(location);
 
 	look(location, mc);
-	
+
 	do {
 		scanf_s("%s", decision, 20);
-		
+
 		action(location, mc, decision);
 	} while (mc.death != 1);
 
@@ -142,45 +143,45 @@ void look(map* location, character mc) {
 	for (aux = 0; aux < strlen(location[counter].description); aux++) {
 		printf("%c", location[counter].description[aux]);
 	}
-	
+
 	printf("\n");
 }
 
 void move(map* location, character mc, char direction) {
-	int previous=mc.position;
+	int previous = mc.position;
 
 	switch (direction) {
-		case 'n':
-			if (location[previous].north != 33) {
-				mc.position = location[previous].north;
-			}
-			else {
-				//blocade();
-			}
-			break;
-		case 's':
-			if (location[previous].south != 33) {
-				mc.position = location[previous].south;
-			}
-			else {
-				//blocade();
-			}
-			break;
-		case 'e':
-			if (location[previous].east != 33) {
-				mc.position = location[previous].east;
-			}
-			else {
-				//blocade();
-			}
-			break;
-		default:
-			if (location[previous].west != 33) {
-				mc.position = location[previous].west;
-			}
-			else {
-				//blocade();
-			}
+	case 'n':
+		if (location[previous].north != 33) {
+			mc.position = location[previous].north;
+		}
+		else {
+			//blocade();
+		}
+		break;
+	case 's':
+		if (location[previous].south != 33) {
+			mc.position = location[previous].south;
+		}
+		else {
+			//blocade();
+		}
+		break;
+	case 'e':
+		if (location[previous].east != 33) {
+			mc.position = location[previous].east;
+		}
+		else {
+			//blocade();
+		}
+		break;
+	default:
+		if (location[previous].west != 33) {
+			mc.position = location[previous].west;
+		}
+		else {
+			//blocade();
+		}
 	}
 	look(location, mc);
 }
